@@ -1,0 +1,26 @@
+import pandas as pd
+
+def main():
+   
+    data = pd.DataFrame({
+        'Name' : ['Amit', 'Sagar', 'Pooja'],
+        'Math' : [85,90,78],
+        'Science' : [92,88,80],
+        'English' : [75,85,82],
+    })
+
+    Line = "-"*85
+
+    data['Total'] = data[['Math', 'Science', 'English']].sum(axis=1)
+
+    print(Line)
+    print(data)
+    print(Line)
+    print("Data after replace the name Pooja to Puja : ")
+    print(Line)
+    data['Name']= data['Name'].replace('Pooja','Puja')
+    print(data)
+    print(Line)
+    
+if __name__ == "__main__":
+    main()
